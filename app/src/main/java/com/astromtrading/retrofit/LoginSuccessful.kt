@@ -16,9 +16,14 @@ class LoginSuccessful : AppCompatActivity() {
     }
     fun getAllUsers(){
         val context=this
-        var btnSubmit: Button =findViewById(R.id.btn_all_users)
-        btnSubmit.setOnClickListener{
+        var btnAllUsers: Button =findViewById(R.id.btn_all_users)
+        var btnUserForm: Button =findViewById(R.id.btn_user_form)
+        btnAllUsers.setOnClickListener{
             val intent = Intent(context,GetAllUsers::class.java)
+            startActivity(intent)
+        }
+        btnUserForm.setOnClickListener{
+            val intent = Intent(context,FormUser::class.java)
             startActivity(intent)
         }
     }

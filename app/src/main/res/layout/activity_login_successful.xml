@@ -19,6 +19,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Show all users" />
+        <Button
+            android:id="@+id/btn_user_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add user" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

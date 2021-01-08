@@ -45,5 +45,10 @@ dependencies {
     //Dependencias para utilizar retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    //implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0' //Dependencia opcional para poder debuggar las peticiones
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0' //Dependencia opcional para poder debuggar las peticiones
+
+    //implementation "org.springframework.security:spring-security-core"
+    // https://mvnrepository.com/artifact/org.mindrot/jbcrypt
+    compile group: 'org.mindrot', name: 'jbcrypt', version: '0.4'//No utilizamos esto ya que la encriptacion lo hace el aplicativo.
+
 }
