@@ -38,9 +38,7 @@ class FormUser : AppCompatActivity() {
                 val passwordEncript= BCrypt.checkpw(inputPassword.toString(),"password")
                 val user:User=User(inputName.toString(),inputEmail.toString(),passwordEncript.toString())*/
                 val user:User=User(inputName.text.toString(),inputEmail.text.toString(),inputPassword.text.toString())
-
                 val apiService : ApiService = ApiUtils().getAPIService()
-
                 apiService.saveUser(user).enqueue(object : Callback<User?> {
                     override fun onResponse(call: Call<User?>, response: Response<User?>) {
                         if (response.isSuccessful) {
@@ -56,31 +54,11 @@ class FormUser : AppCompatActivity() {
                         println("fallo en la llamada. Error:" + t.printStackTrace())
                     }
                 })
-                //var myUser =apiService.saveUser(user.name,user.email,user.password)
-                /*
-                apiService.saveUser(user.name,user.email,user.password)?.enqueue(object : Callback<User?> {
-                    override fun onResponse(call: Call<User?>, response: Response<User?>) {
-                        //if (response.isSuccessful) {
-                        var myUser: User? = response.body()
-                        println("Mi Usuario: " + myUser)
-                        println("call = [${call}], response = [${response}]")
-                        val intent = Intent(context, GetAllUsers::class.java)
-                        startActivity(intent)
-                        //}
-                    }
 
-                    override fun onFailure(call: Call<User?>, t: Throwable) {
-
-                    }
-                })*/
             }else{
                 val intent = Intent(context,FormUser::class.java)
                 startActivity(intent)
             }
-            //Mostramos la vista donde se encuentran todos los usuarios
-            /*
-            val intent = Intent(context,GetAllUsers::class.java)
-            startActivity(intent)*/
         }
     }
 }
